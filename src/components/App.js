@@ -105,10 +105,10 @@ const App=()=> {
 
       <div>
         <ul className="list">
-          <li onClick={()=>handleBre('all')}>All</li>
-          <li onClick={()=>handleBre('breakfast')}>Breakfast</li>
-          <li onClick={()=>handleBre('lunch')}>Lunch</li>
-          <li onClick={()=>handleBre('shakes')}>Shakes</li>
+          <li  onClick={()=>handleBre('all')}>All</li>
+          <li id='filter-btn-1' onClick={()=>handleBre('breakfast')}>Breakfast</li>
+          <li id='filter-btn-2' onClick={()=>handleBre('lunch')}>Lunch</li>
+          <li id='filter-btn-3' onClick={()=>handleBre('shakes')}>Shakes</li>
 
         </ul>
       </div>
