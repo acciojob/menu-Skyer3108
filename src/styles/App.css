@@ -10,3 +10,12 @@ button{
     justify-content: center;
     align-items: center;
 }
+.list{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    
+}
+.list li{
+    list-style-type:none;
+}
