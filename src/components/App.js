@@ -101,11 +101,11 @@ const App=()=> {
   }
 
   return (
-    <div className="App">
+    <div id='main' className="App">
 
       <div>
         <ul className="list">
-          <li  onClick={()=>handleBre('all')}>All</li>
+          <li id="filter-btn-all"  onClick={()=>handleBre('all')}>All</li>
           <li id='filter-btn-1' onClick={()=>handleBre('breakfast')}>Breakfast</li>
           <li id='filter-btn-2' onClick={()=>handleBre('lunch')}>Lunch</li>
           <li id='filter-btn-3' onClick={()=>handleBre('shakes')}>Shakes</li>
@@ -115,7 +115,7 @@ const App=()=> {
 
       {
 cat.map((val)=>(
-          <div>
+          <div key={val.id} data-test-id={`menu-item-${val.category}`}>
             <img src={val.img}/>
             <p>{val.title}</p>
             <p>{val.price}</p>
