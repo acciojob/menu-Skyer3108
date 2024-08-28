@@ -83,15 +83,21 @@ const App=()=> {
 
   const [cat,setCat]=useState(data)
 
-  const handleAll=()=>{
-    setCat(data)
-  }
+ 
 
   
 
   const handleBre=(cat)=>{
-    let filterBre=data.filter((val)=>val.category===cat)
-    setCat(filterBre)
+    if(cat==='all'){
+      setCat(data)
+
+    }else{
+
+      let filterBre=data.filter((val)=>val.category===cat)
+      setCat(filterBre)
+
+    }
+   
   }
 
   return (
@@ -99,7 +105,7 @@ const App=()=> {
 
       <div>
         <ul className="list">
-          <li onClick={handleAll}>All</li>
+          <li onClick={()=>handleBre('all')}>All</li>
           <li onClick={()=>handleBre('breakfast')}>Breakfast</li>
           <li onClick={()=>handleBre('lunch')}>Lunch</li>
           <li onClick={()=>handleBre('shakes')}>Shakes</li>
@@ -108,19 +114,7 @@ const App=()=> {
       </div>
 
       {
-cat ?cat.map((val)=>(
-  <div>
-    <img src={val.img}/>
-    <p>{val.title}</p>
-    <p>{val.price}</p>
-
-    <hr></hr>
-    <p>{val.desc}</p>
-
-
-    </div>
-))
-:data.map((val)=>(
+cat.map((val)=>(
           <div>
             <img src={val.img}/>
             <p>{val.title}</p>
